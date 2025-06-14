@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation Tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- TailwindCSS Component Utilities -->
+    <style>
+      .task-card {
+        @apply bg-white shadow-md rounded-xl p-6 hover:border-blue-600 border-2 border-transparent transition;
+      }
+      .task-title {
+        @apply text-xl font-semibold text-blue-700 mb-2;
+      }
+      .input {
+        @apply w-full px-3 py-2 border border-gray-300 rounded;
+      }
+      .btn-run {
+        @apply w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <h1 class="text-4xl font-bold text-center text-gray-700 mb-10">
+      🧠 JavaScript DOM Manipulation Tasks
+    </h1>
+
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Task 1 -->
+      <div class="task-card">
+        <h2 class="task-title">1. Change Paragraph Text</h2>
+        <p id="message" class="text-gray-700 mb-2">Old message...</p>
+        <button onclick="task1()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 2 -->
+      <div class="task-card">
+        <h2 class="task-title">2. Display Input Value</h2>
+        <input id="nameInput" type="text" placeholder="Enter name"
+          class="input" />
+        <div id="result" class="text-gray-800 mt-2">Result here</div>
+        <button onclick="task2()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 3 -->
+      <div class="task-card">
+        <h2 class="task-title">3. Change Section Background</h2>
+        <div id="container" class="h-16 bg-gray-300 mb-2 rounded"></div>
+        <button onclick="task3()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 4 -->
+      <div class="task-card">
+        <h2 class="task-title">4. Change Heading Color</h2>
+        <h1 id="mainTitle" class="text-2xl font-bold text-gray-700 mb-2">Main
+          Heading</h1>
+        <button onclick="task4()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 5 -->
+      <div class="task-card">
+        <h2 class="task-title">5. Show Number from Input</h2>
+        <input id="num1" type="number" class="input" />
+        <p id="output" class="mt-2 text-gray-800">Output here</p>
+        <button onclick="task5()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 6 -->
+      <div class="task-card">
+        <h2 class="task-title">6. Log Button Click</h2>
+        <button class="submit-btn btn-run" onclick="task6()">Run</button>
+      </div>
+
+      <!-- Task 7 -->
+      <div class="task-card">
+        <h2 class="task-title">7. Add Two Numbers</h2>
+        <input id="first" type="number" class="input mb-2" />
+        <input id="second" type="number" class="input mb-2" />
+        <span id="sum" class="block mb-2 text-gray-800">Sum appears here</span>
+        <button onclick="task7()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 8 -->
+      <div class="task-card">
+        <h2 class="task-title">8. Update Paragraph Text</h2>
+        <p class="description text-gray-700 mb-2">Original description...</p>
+        <button onclick="task8()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 9 -->
+      <div class="task-card">
+        <h2 class="task-title">9. Style a Box</h2>
+        <div id="box" class="h-16 bg-gray-300 rounded mb-2"></div>
+        <button onclick="task9()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 10 -->
+      <div class="task-card">
+        <h2 class="task-title">10. Get Email from Input</h2>
+        <input id="email" type="email" class="input"
+          placeholder="Enter email" />
+        <button onclick="task10()" class="btn-run mt-2">Run</button>
+      </div>
+
+      <!-- Task 11 -->
+      <div class="task-card">
+        <h2 class="task-title">11. Update Font Size</h2>
+        <p id="fontPara" class="text-gray-700 mb-2">Resize this text</p>
+        <button onclick="task11()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 12 -->
+      <div class="task-card">
+        <h2 class="task-title">12. Greet User</h2>
+        <input id="fullName" type="text" placeholder="Enter full name"
+          class="input" />
+        <div id="greeting" class="text-gray-800 mt-2">Greeting here</div>
+        <button onclick="task12()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 13 -->
+      <div class="task-card">
+        <h2 class="task-title">13. Change Image</h2>
+        <img id="profilePic" src="1.jpg"
+          class="w-full h-40 object-cover rounded mb-2" />
+        <button onclick="task13()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 14 -->
+      <div class="task-card">
+        <h2 class="task-title">14. Highlight Text</h2>
+        <p class="highlight text-gray-700 mb-1">Item 1</p>
+        <p class="highlight text-gray-700 mb-1">Item 2</p>
+        <button onclick="task14()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 15 -->
+      <div class="task-card">
+        <h2 class="task-title">15. Checkbox Check</h2>
+        <label class="flex items-center mb-2">
+          <input type="checkbox" id="agree" class="mr-2" /> I agree
+        </label>
+        <p id="checkStatus" class="text-gray-800">Status will appear here</p>
+        <button onclick="task15()" class="btn-run mt-2">Run</button>
+      </div>
+
+      <!-- Task 16 -->
+      <div class="task-card">
+        <h2 class="task-title">16. Get Dropdown Value</h2>
+        <select id="options" class="input mb-2">
+          <option value>Select an option</option>
+          <option value="Option A">Option A</option>
+          <option value="Option B">Option B</option>
+        </select>
+        <span id="selectedValue" class="block text-gray-800">Value here</span>
+        <button onclick="task16()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 17 -->
+      <div class="task-card">
+        <h2 class="task-title">17. Show Date & Time</h2>
+        <p id="dateTime" class="text-gray-800 mb-2">DateTime will appear</p>
+        <button onclick="task17()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 18 -->
+      <div class="task-card">
+        <h2 class="task-title">18. Hide Paragraph</h2>
+        <p id="togglePara" class="text-gray-700 mb-2">I will be hidden.</p>
+        <button onclick="task18()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 19 -->
+      <div class="task-card">
+        <h2 class="task-title">19. Check Age Eligibility</h2>
+        <input id="age" type="number" placeholder="Enter age"
+          class="input mb-2" />
+        <span id="eligibility" class="block text-gray-800">Result here</span>
+        <button onclick="task19()" class="btn-run">Run</button>
+      </div>
+
+      <!-- Task 20 -->
+      <div class="task-card">
+        <h2 class="task-title">20. Clear Input Field</h2>
+        <input id="searchBox" type="text" placeholder="Search..."
+          class="input mb-2" />
+        <button onclick="task20()" class="btn-run">Run</button>
+      </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
