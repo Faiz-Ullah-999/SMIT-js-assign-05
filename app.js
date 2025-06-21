@@ -118,3 +118,7 @@ function task19() {
 function task20() {
   document.querySelector("#searchBox").value = "";
 }
+
+
+
+
